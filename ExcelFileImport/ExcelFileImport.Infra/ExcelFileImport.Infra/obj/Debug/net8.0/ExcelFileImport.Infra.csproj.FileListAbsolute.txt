@@ -1,0 +1,13 @@
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\bin\Debug\net8.0\ExcelFileImport.Infra.deps.json
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\bin\Debug\net8.0\ExcelFileImport.Infra.dll
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\bin\Debug\net8.0\ExcelFileImport.Infra.pdb
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\obj\Debug\net8.0\ExcelFileImport.Infra.csproj.AssemblyReference.cache
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\obj\Debug\net8.0\ExcelFileImport.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\obj\Debug\net8.0\ExcelFileImport.Infra.AssemblyInfoInputs.cache
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\obj\Debug\net8.0\ExcelFileImport.Infra.AssemblyInfo.cs
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\obj\Debug\net8.0\ExcelFileImport.Infra.csproj.CoreCompileInputs.cache
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\obj\Debug\net8.0\ExcelFileImport.Infra.sourcelink.json
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\obj\Debug\net8.0\ExcelFileImport.Infra.dll
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\obj\Debug\net8.0\refint\ExcelFileImport.Infra.dll
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\obj\Debug\net8.0\ExcelFileImport.Infra.pdb
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Infra\ExcelFileImport.Infra\obj\Debug\net8.0\ref\ExcelFileImport.Infra.dll

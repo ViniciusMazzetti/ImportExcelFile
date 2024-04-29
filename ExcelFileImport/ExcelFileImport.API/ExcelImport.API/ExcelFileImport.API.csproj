@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ExcelFileImport.Infra\ExcelFileImport.Infra\ExcelFileImport.Infra.csproj" />
+    <ProjectReference Include="..\..\ExcelFileImport.Model\ExcelFileImport.Model.csproj" />
+    <ProjectReference Include="..\..\ExcelFileImport.Application\ExcelFileImport.Application.csproj" />
+  </ItemGroup>
+
+</Project>
