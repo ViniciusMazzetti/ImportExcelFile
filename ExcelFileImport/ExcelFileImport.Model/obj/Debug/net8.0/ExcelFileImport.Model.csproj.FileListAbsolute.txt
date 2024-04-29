@@ -1,0 +1,12 @@
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\bin\Debug\net8.0\ExcelFileImport.Model.deps.json
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\bin\Debug\net8.0\ExcelFileImport.Model.dll
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\bin\Debug\net8.0\ExcelFileImport.Model.pdb
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\obj\Debug\net8.0\ExcelFileImport.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\obj\Debug\net8.0\ExcelFileImport.Model.AssemblyInfoInputs.cache
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\obj\Debug\net8.0\ExcelFileImport.Model.AssemblyInfo.cs
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\obj\Debug\net8.0\ExcelFileImport.Model.csproj.CoreCompileInputs.cache
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\obj\Debug\net8.0\ExcelFileImport.Model.sourcelink.json
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\obj\Debug\net8.0\ExcelFileImport.Model.dll
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\obj\Debug\net8.0\refint\ExcelFileImport.Model.dll
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\obj\Debug\net8.0\ExcelFileImport.Model.pdb
+C:\NewFileImport\ExcelFileImport\ExcelFileImport.Model\obj\Debug\net8.0\ref\ExcelFileImport.Model.dll
