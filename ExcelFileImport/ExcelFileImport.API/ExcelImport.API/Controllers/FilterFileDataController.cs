@@ -1,6 +1,7 @@
 ﻿using ExcelFileImport.Application.GetFileData;
 using ExcelFileImport.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,19 +9,20 @@ using System.Data;
 namespace ExcelFileImport.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route($"api/[controller]")]
     public class FilterFileDataController : ControllerBase
     {
         private readonly GetFileData excelSearcher;
+        private readonly IConfiguration _configuration;
 
-        public FilterFileDataController()
+        public FilterFileDataController(IConfiguration configuration)
         {
-            string connectionString = "Server=(local)\\sqlserver; Database=ExcelFileImport; User Id=sa; Password=rodel123; Persist Security Info=True; MultipleActiveResultSets=true; Encrypt=false";
-            excelSearcher = new GetFileData(connectionString);
+            _configuration = configuration;
+            excelSearcher = new GetFileData(_configuration);
         }
-
-        [HttpPost("Search")]
-        public IActionResult SearchExcelData([FromBody] FileDataModel filters)
+        
+        [HttpPost(Name = "Filter File Data")]
+        public IActionResult FilterFileData([FromBody] FileDataModel filters)
         {
             try
             {

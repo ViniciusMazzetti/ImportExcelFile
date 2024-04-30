@@ -1,4 +1,6 @@
-﻿using ExcelFileImport.Infra;
+﻿using ExcelFileImport.Application.FileImport;
+using ExcelFileImport.Bootstrap.Configuration;
+using ExcelFileImport.Infra;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Diagnostics.CodeAnalysis;
@@ -21,17 +23,17 @@ namespace ExcelFileImport.Api
         protected virtual void SetConfigureServices(
             IServiceCollection services)
         {
-
             services.AddControllers()
                 .AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
             services.AddEndpointsApiExplorer();
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            //services.CreateDB(_configuration);
+            services.CreateDB(_configuration);
             services.ConfigureSwaggerGenServices(_configuration);
             services.Configure<FormOptions>(options =>
             {
-                options.MultipartBodyLengthLimit = long.MaxValue; // Set maximum request body size
+                options.MultipartBodyLengthLimit = long.MaxValue;
             });
+            services.AddTransient<FileImport>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -46,8 +48,7 @@ namespace ExcelFileImport.Api
                 Console.WriteLine($"Server starting...");
 
                 app.UseSwagger();
-                app.UseSwaggerUI();
-
+                app.UseSwaggerUI();                
                 app.UseHttpsRedirection();
                 app.UseRouting();
                 app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
