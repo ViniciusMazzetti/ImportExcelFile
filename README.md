@@ -31,6 +31,9 @@ Abrir a solution "ExcelFileImport.sln" no visual studio e compilar
 # definir o projeto de inicialização
 ExcelFileImport.API
 
+# configurar a string de conexão do Sql Server
+appsettings.Development.json
+
 # executar o projeto
 ```
 
