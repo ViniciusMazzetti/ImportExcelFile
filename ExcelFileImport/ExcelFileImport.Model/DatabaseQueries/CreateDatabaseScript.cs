@@ -8,7 +8,10 @@
             CREATE TABLE [dbo].[FileDetails](
                 [Id] [int] IDENTITY(1,1) NOT NULL,
                 [FileName] [nvarchar](max) NULL,
-                [CreatedDate] [datetime] NULL
+                [FileSize] [bigint] NULL,
+                [FileAlias] [nvarchar](max) NULL,
+                [CreatedDate] [datetime] NULL,
+                CONSTRAINT [PK_FileDetails_Id] PRIMARY KEY CLUSTERED ([Id] ASC)
             )";
 
         public const string CreateFileDataTable = @"
@@ -19,7 +22,9 @@
                 [ProductSku] [nvarchar](max) NULL,  
                 [Date] [datetime] NULL,
                 [Quantity] [int] NULL,
-                [Revenue] [decimal](18, 2) NULL
+                [Revenue] [decimal](18, 2) NULL,
+                [FileDetailsId] [int] NULL,
+                CONSTRAINT [FK_FileData_FileDetails] FOREIGN KEY ([FileDetailsId]) REFERENCES [dbo].[FileDetails]([Id])
             )";
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ExcelFileImport.Model;
 using ExcelFileImport.Model.DatabaseQueries;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -14,7 +15,7 @@ namespace ExcelFileImport.Application.GetFileData
         {
             _configuration = configuration;
         }
-        public DataTable GetData(FileDataModel filters)
+        public string GetData(FileDataModel filters)
         {
             try
             {
@@ -30,7 +31,7 @@ namespace ExcelFileImport.Application.GetFileData
             }
         }
 
-        private DataTable ExecuteQuery(string sqlQuery)
+        private string ExecuteQuery(string sqlQuery)
         {
             using var connection = new SqlConnection(_configuration.GetConnectionString("ConnString"));
             using var command = new SqlCommand(sqlQuery, connection);
@@ -42,37 +43,46 @@ namespace ExcelFileImport.Application.GetFileData
             {
                 dataTable.Load(reader);
             }
-            return dataTable;
+
+            var result = JsonConvert.SerializeObject(dataTable);
+
+            return result;
         }
 
         private static string ApplyFilters(FileDataModel filters, string sqlQuery)
         {
-            if (!string.IsNullOrEmpty(filters.ClientCode))
+            if (ValidateFilters(filters.ClientCode))
             {
                 sqlQuery += $" AND ClientCode = {filters.ClientCode}";
             }
-            if (filters.Quantity != null)
+            if (ValidateFilters(filters.Quantity))
             {
-                sqlQuery += $" AND Quantity = {filters.Quantity}";
+                sqlQuery += $" AND FD.Quantity = {filters.Quantity}";
             }
-            if (filters.Date != null)
+            if (ValidateFilters(filters.InitialDate) && ValidateFilters(filters.EndDate))
             {
-                sqlQuery += $" AND Date = {filters.Date}";
+                sqlQuery += $" AND FD.Date BETWEEN '{filters.InitialDate}' AND '{filters.EndDate}'";
             }
-            if (filters.Revenue != null)
+            if (ValidateFilters(filters.Revenue))
             {
-                sqlQuery += $" AND Revenue = {filters.Revenue}";
+                sqlQuery += $" AND FD.Revenue = {filters.Revenue}";
             }
-            if (!string.IsNullOrEmpty(filters.ProductCategory))
+            if (ValidateFilters(filters.ProductCategory))
             {
-                sqlQuery += $" AND ProductCategory = {filters.ProductCategory}";
+                sqlQuery += $" AND FD.ProductCategory LIKE '%{filters.ProductCategory}%'";
             }
-            if (!string.IsNullOrEmpty(filters.ProductSku))
+            if (ValidateFilters(filters.ProductSku))
             {
-                sqlQuery += $" AND ProductSku = {filters.ProductSku}";
+                sqlQuery += $" AND FD.ProductSku LIKE '%{filters.ProductSku}%'";
+            }
+            if (ValidateFilters(filters.FileAlias))
+            {
+                sqlQuery += $" AND FD.FileDetailsId = {filters.FileAlias}";
             }
 
             return sqlQuery;
         }
+
+        private static bool ValidateFilters(string? filter) => !string.IsNullOrEmpty(filter);
     }
 }

@@ -22,7 +22,8 @@ namespace ExcelFileImport.API.Controllers
                 byte[] fileData = Convert.FromBase64String(model.FileData);
 
                 var importer = new FileImport(_configuration);
-                await importer.ImportExcelFile(fileData);
+
+                await importer.ImportExcelFile(fileData, model);
 
                 return StatusCode((int)HttpStatusCode.Created);
             }

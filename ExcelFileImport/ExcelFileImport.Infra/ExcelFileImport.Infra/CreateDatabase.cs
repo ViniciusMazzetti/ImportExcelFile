@@ -10,7 +10,7 @@ namespace ExcelFileImport.Bootstrap.Configuration
             this IServiceCollection services,
             IConfiguration configuration)
         {
-            string connectionString = configuration.GetConnectionString("ConnString");
+            string connectionString = configuration.GetConnectionString("ConnString")!;
 
             using SqlConnection connection = new(connectionString);
             try { connection.Open(); }
@@ -21,11 +21,20 @@ namespace ExcelFileImport.Bootstrap.Configuration
                     string databaseName = connection.Database;
                     CreateDB(connection, databaseName);
 
+                    Thread.Sleep(5000); //Infelizmente não achei outra forma de esperar a criação do banco
+
                     connection.ConnectionString = connectionString;
-                    connection.Open();
-                    ExecuteSqlCommand(connection, CreateDatabaseScript.CreateFileDetailsTable);
-                    ExecuteSqlCommand(connection, CreateDatabaseScript.CreateFileDataTable);
-                    connection.Close();
+                    try
+                    {
+                        connection.Open();
+                        ExecuteSqlCommand(connection, CreateDatabaseScript.CreateFileDetailsTable);
+                        ExecuteSqlCommand(connection, CreateDatabaseScript.CreateFileDataTable);
+                        connection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception($"Error creating tables: {ex.Message}");
+                    }
                 }
                 catch (Exception ex)
                 {

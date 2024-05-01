@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+hZqQmBYeFe6yr1jzyCJ8hNw4a9ixQAFEcLw/3eMOiW/OUgnmElgdD6If+iczURklkPxiT0+DO4DfbdTVC9sPw==",
+  "dgSpecHash": "VwJfq0wFZT2u5Z13Fio5ws9KHCJpciJlp0kMg6nrIKfiJooyMBEp1bVM9iwQNr0iKS0H36l1HB3yS3NGhgMPUg==",
   "success": true,
   "projectFilePath": "C:\\NewFileImport\\ExcelFileImport\\ExcelFileImport.Application\\ExcelFileImport.Application.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,7 @@
     "C:\\Users\\vinic\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\vinic\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\vinic\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\vinic\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\vinic\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\vinic\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\vinic\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

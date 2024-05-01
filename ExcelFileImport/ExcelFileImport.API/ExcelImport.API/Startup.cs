@@ -1,6 +1,7 @@
 ﻿using ExcelFileImport.Application.FileImport;
 using ExcelFileImport.Bootstrap.Configuration;
 using ExcelFileImport.Infra;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using System.Diagnostics.CodeAnalysis;
@@ -34,6 +35,16 @@ namespace ExcelFileImport.Api
                 options.MultipartBodyLengthLimit = long.MaxValue;
             });
             services.AddTransient<FileImport>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "*",
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("*");
+                                      policy.AllowAnyHeader();
+                                      policy.AllowAnyMethod();
+                                  });
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -48,6 +59,7 @@ namespace ExcelFileImport.Api
                 Console.WriteLine($"Server starting...");
 
                 app.UseSwagger();
+                app.UseCors("*");
                 app.UseSwaggerUI();                
                 app.UseHttpsRedirection();
                 app.UseRouting();
